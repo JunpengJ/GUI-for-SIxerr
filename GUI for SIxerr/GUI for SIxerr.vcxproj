@@ -121,11 +121,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\projects\Sixerr\Sorting.cpp" />
     <ClCompile Include="Customer.cpp" />
     <ClCompile Include="FindFreelancers.cpp" />
     <ClCompile Include="Freelencer.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Setting.cpp" />
+    <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Customer.h">
@@ -160,6 +162,9 @@
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Documents\SixerrDB.accdb" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
