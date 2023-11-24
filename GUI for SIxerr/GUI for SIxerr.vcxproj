@@ -125,6 +125,9 @@
     <ClCompile Include="FindFreelancers.cpp" />
     <ClCompile Include="Freelencer.cpp" />
     <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="MassagesBox.cpp" />
+    <ClCompile Include="Messages.cpp" />
+    <ClCompile Include="SendMessage.cpp" />
     <ClCompile Include="Setting.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="SortingAL.cpp" />
@@ -140,6 +143,15 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Interface.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MassagesBox.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Messages.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SendMessage.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Setting.h">
@@ -158,6 +170,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interface.resx">
       <DependentUpon>Interface.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MassagesBox.resx">
+      <DependentUpon>MassagesBox.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.resx">
+      <DependentUpon>Messages.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendMessage.resx">
+      <DependentUpon>SendMessage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.h</DependentUpon>
