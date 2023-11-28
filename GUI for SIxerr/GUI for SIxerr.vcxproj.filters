@@ -15,34 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Interface.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Customer.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Freelencer.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Setting.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FindFreelancers.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="Program.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SortingAL.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Messages.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SendMessage.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MassagesBox.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,10 +44,41 @@
     <ClInclude Include="MassagesBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LOSF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SignUpForC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SignUpForF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Documents\SixerrDB.accdb">
       <Filter>Source Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="LOSC.h">
+      <Filter>Header Files</Filter>
+    </Natvis>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LOSC.resx">
+      <Filter>Source Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOSF.resx">
+      <Filter>Source Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForC.resx">
+      <Filter>Source Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForF.resx">
+      <Filter>Source Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -121,20 +121,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Customer.cpp" />
-    <ClCompile Include="FindFreelancers.cpp" />
-    <ClCompile Include="Freelencer.cpp" />
-    <ClCompile Include="Interface.cpp" />
-    <ClCompile Include="LOSC.cpp" />
-    <ClCompile Include="LOSF.cpp" />
-    <ClCompile Include="MassagesBox.cpp" />
-    <ClCompile Include="Messages.cpp" />
-    <ClCompile Include="SendMessage.cpp" />
-    <ClCompile Include="Setting.cpp" />
     <ClCompile Include="Program.cpp" />
-    <ClCompile Include="SignUpForC.cpp" />
-    <ClCompile Include="SignUpForF.cpp" />
-    <ClCompile Include="SortingAL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Customer.h">
@@ -149,6 +136,7 @@
     <ClInclude Include="Interface.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="User.h" />
     <Natvis Include="LOSC.h">
       <FileType>CppForm</FileType>
     </Natvis>
