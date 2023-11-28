@@ -22,18 +22,28 @@ void main(array<String^>^ args) {
 	GUIforSIxerr::Interface form;
 	GUIforSIxerr::LOSC loginForm;
 	GUIforSIxerr::LOSF loginFormF;
+	GUIforSIxerr::SignUpForC SignUpCust;
+	GUIforSIxerr::SignUpForF SignUpFree;
 
 	User^ user = nullptr;
+
 	while (true) {
+
 		form.ShowDialog();
+
 		if (form.switchToCustomer)
 		{
 			loginForm.ShowDialog();
 			form.switchToCustomer = false;
 
-
 			if (loginForm.switchToInterface) {
 				loginForm.switchToInterface = false;
+				continue;
+			}
+
+			else if (loginForm.switchToCustomerSignUp) {
+				SignUpCust.ShowDialog();
+				loginForm.switchToCustomerSignUp = false;
 				continue;
 			}
 			else {
@@ -41,6 +51,7 @@ void main(array<String^>^ args) {
 				break;
 			}
 		}
+
 		else if (form.switchToFreelancer)
 		{
 			loginFormF.ShowDialog();
@@ -51,11 +62,17 @@ void main(array<String^>^ args) {
 				loginFormF.switchToInterface = false;
 				continue;
 			}
+			else if (loginFormF.switchToFreelancerSignUp) {
+				SignUpFree.ShowDialog();
+				loginFormF.switchToFreelancerSignUp = false;
+				continue;
+			}
 			else {
 				user = loginFormF.user;
 				break;
 			}
 		}
+
 		else {
 			user = form.user;
 			break;
@@ -65,11 +82,11 @@ void main(array<String^>^ args) {
 	}
 	if (user != nullptr) {
 		GUIforSIxerr::Customer Customerform(user);
-		MessageBox::Show("Welcome " + user->Fname, "Program.cpp", MessageBoxButtons::OK);
+		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
 		Application::Run(% Customerform);
 	}
 	else {
-		MessageBox::Show("Canceled", "Program.cpp", MessageBoxButtons::OK);
+		MessageBox::Show("Canceled", "Sixerr", MessageBoxButtons::OK);
 	}
 
 }
