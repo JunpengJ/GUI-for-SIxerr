@@ -125,11 +125,15 @@
     <ClCompile Include="FindFreelancers.cpp" />
     <ClCompile Include="Freelencer.cpp" />
     <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="LOSC.cpp" />
+    <ClCompile Include="LOSF.cpp" />
     <ClCompile Include="MassagesBox.cpp" />
     <ClCompile Include="Messages.cpp" />
     <ClCompile Include="SendMessage.cpp" />
     <ClCompile Include="Setting.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="SignUpForC.cpp" />
+    <ClCompile Include="SignUpForF.cpp" />
     <ClCompile Include="SortingAL.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +149,12 @@
     <ClInclude Include="Interface.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <Natvis Include="LOSC.h">
+      <FileType>CppForm</FileType>
+    </Natvis>
+    <ClInclude Include="LOSF.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MassagesBox.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -155,6 +165,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Setting.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SignUpForC.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SignUpForF.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -171,6 +187,8 @@
     <EmbeddedResource Include="Interface.resx">
       <DependentUpon>Interface.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LOSC.resx" />
+    <EmbeddedResource Include="LOSF.resx" />
     <EmbeddedResource Include="MassagesBox.resx">
       <DependentUpon>MassagesBox.h</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +201,8 @@
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForC.resx" />
+    <EmbeddedResource Include="SignUpForF.resx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Documents\SixerrDB.accdb" />
