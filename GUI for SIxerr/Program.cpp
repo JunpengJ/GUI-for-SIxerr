@@ -81,14 +81,16 @@ void main(array<String^>^ args) {
 		
 
 	}
-	if (user->Desig == "Customer" && user->Desig != "Freelancer") {
+	if (loginForm.CustomerStatus) {
 		GUIforSIxerr::Customer Customerform(user);
 		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
 		Application::Run(% Customerform);
 	}
-	else {
-		MessageBox::Show("This Registered Account is a Freelancer Account.", "Sixerr", MessageBoxButtons::OK);
-
+	if (loginFormF.FreelancerStatus)
+	{
+		GUIforSIxerr::Freelencer Freelancer(user);
+		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
+		Application::Run(% Freelancer);
 	}
 
 }
