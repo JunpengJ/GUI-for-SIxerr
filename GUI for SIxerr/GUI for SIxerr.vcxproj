@@ -136,6 +136,7 @@
     <ClInclude Include="Interface.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MessageClass.h" />
     <ClInclude Include="User.h" />
     <Natvis Include="LOSC.h">
       <FileType>CppForm</FileType>
