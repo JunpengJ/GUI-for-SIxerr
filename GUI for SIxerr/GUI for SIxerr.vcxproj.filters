@@ -59,6 +59,9 @@
     <ClInclude Include="User.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MessageClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="ListWorkOrder.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -140,6 +140,7 @@
     <ClInclude Include="ListWorkOrder.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="MessageClass.h" />
     <ClInclude Include="User.h" />
     <Natvis Include="LOSC.h">
       <FileType>CppForm</FileType>
