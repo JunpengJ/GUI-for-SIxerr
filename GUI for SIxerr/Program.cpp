@@ -26,6 +26,7 @@ void main(array<String^>^ args) {
 	GUIforSIxerr::SignUpForF SignUpFree;
 
 	User^ user = nullptr;
+	
 
 	while (true) {
 
@@ -80,13 +81,14 @@ void main(array<String^>^ args) {
 		
 
 	}
-	if (user != nullptr) {
+	if (user->Desig == "Customer" && user->Desig != "Freelancer") {
 		GUIforSIxerr::Customer Customerform(user);
 		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
 		Application::Run(% Customerform);
 	}
 	else {
-		MessageBox::Show("Canceled", "Sixerr", MessageBoxButtons::OK);
+		MessageBox::Show("This Registered Account is a Freelancer Account.", "Sixerr", MessageBoxButtons::OK);
+
 	}
 
 }

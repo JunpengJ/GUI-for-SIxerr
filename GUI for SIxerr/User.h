@@ -9,5 +9,4 @@ public:
 	String^ Lname;
 	int Rating;
 	String^ Desig;
-
 };
