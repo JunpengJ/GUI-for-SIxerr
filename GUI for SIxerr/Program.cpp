@@ -48,7 +48,7 @@ void main(array<String^>^ args) {
 				continue;
 			}
 			else {
-				user = loginForm.user;
+				user = loginForm.userC;
 				break;
 			}
 		}
@@ -69,7 +69,7 @@ void main(array<String^>^ args) {
 				continue;
 			}
 			else {
-				user = loginFormF.user;
+				user = loginFormF.userF;
 				break;
 			}
 		}
