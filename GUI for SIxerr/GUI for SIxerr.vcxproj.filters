@@ -18,6 +18,9 @@
     <ClCompile Include="Program.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="ListWorkOrder.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Interface.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="User.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListWorkOrder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

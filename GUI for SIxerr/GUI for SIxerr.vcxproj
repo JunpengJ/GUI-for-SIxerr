@@ -121,6 +121,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ListWorkOrder.cpp" />
     <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="Interface.h">
       <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ListWorkOrder.h">
+      <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User.h" />
     <Natvis Include="LOSC.h">
@@ -174,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interface.resx">
       <DependentUpon>Interface.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListWorkOrder.resx">
+      <DependentUpon>ListWorkOrder.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOSC.resx" />
     <EmbeddedResource Include="LOSF.resx" />
