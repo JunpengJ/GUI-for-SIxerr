@@ -20,37 +20,37 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{853BAFF8-9ED8-4524-BF6B-DA1FD6ED187F}</ProjectGuid>
-    <EnableManagedPackageReferenceSupport>true</EnableManagedPackageReferenceSupport>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ProjectGuid>{1E23C50A-2038-439A-850F-64F02028B443}</ProjectGuid>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>GUIforSIxerr</RootNamespace>
+    <RootNamespace>WorkOrder</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <EnableManagedPackageReferenceSupport>true</EnableManagedPackageReferenceSupport>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
@@ -77,17 +77,19 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Windows</SubSystem>
-      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -97,6 +99,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -106,6 +110,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -114,9 +120,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Reference Include="FreelancerWorkOrder">
-      <HintPath>..\..\..\..\..\projects\FreelancerWorkOrder\FreelancerWorkOrder\x64\Debug\FreelancerWorkOrder.dll</HintPath>
-    </Reference>
+    <ClInclude Include="MyUserControl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="WorkOrder.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="MyUserControl.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="WorkOrder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -124,79 +152,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Program.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Customer.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="FindFreelancers.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Freelencer.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Interface.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="User.h" />
-    <Natvis Include="LOSC.h">
-      <FileType>CppForm</FileType>
-    </Natvis>
-    <ClInclude Include="LOSF.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MassagesBox.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Messages.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="SendMessage.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Setting.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="SignUpForC.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="SignUpForF.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Customer.resx">
-      <DependentUpon>Customer.h</DependentUpon>
+    <EmbeddedResource Include="MyUserControl.resx">
+      <DependentUpon>MyUserControl.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindFreelancers.resx">
-      <DependentUpon>FindFreelancers.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Freelencer.resx">
-      <DependentUpon>Freelencer.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interface.resx">
-      <DependentUpon>Interface.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LOSC.resx" />
-    <EmbeddedResource Include="LOSF.resx" />
-    <EmbeddedResource Include="MassagesBox.resx">
-      <DependentUpon>MassagesBox.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Messages.resx">
-      <DependentUpon>Messages.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SendMessage.resx">
-      <DependentUpon>SendMessage.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Setting.resx">
-      <DependentUpon>Setting.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SignUpForC.resx" />
-    <EmbeddedResource Include="SignUpForF.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\..\Documents\SixerrDB.accdb" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

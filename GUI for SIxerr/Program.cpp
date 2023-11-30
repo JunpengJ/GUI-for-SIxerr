@@ -10,7 +10,7 @@
 #include "Setting.h"
 #include "SignUpForC.h"
 #include "SignUpForF.h"
-#include "ListWorkOrder.h"
+
 
 
 using namespace System;
@@ -25,6 +25,7 @@ void main(array<String^>^ args) {
 	GUIforSIxerr::LOSF loginFormF;
 	GUIforSIxerr::SignUpForC SignUpCust;
 	GUIforSIxerr::SignUpForF SignUpFree;
+
 
 	User^ user = nullptr;
 	
@@ -89,9 +90,9 @@ void main(array<String^>^ args) {
 	}
 	if (loginFormF.FreelancerStatus)
 	{
-		GUIforSIxerr::Freelencer Freelancer(user);
+		GUIforSIxerr::Freelencer freelancer(user);
 		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
-		Application::Run(% Freelancer);
+		freelancer.ShowDialog();
 	}
 
 }
