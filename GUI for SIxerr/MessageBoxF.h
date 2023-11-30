@@ -1,7 +1,8 @@
 #pragma once
 #include "LOSF.h"
-#include "MessageClass.h"
+#include "MessageClassF.h"
 #include "MessagePresenter.h"
+#include "UserF.h"
 #include <list>
 
 namespace GUIforSIxerr {
@@ -9,6 +10,7 @@ namespace GUIforSIxerr {
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
+	using namespace System::Collections::Generic;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
@@ -19,8 +21,9 @@ namespace GUIforSIxerr {
 	/// </summary>
 	public ref class MessageBoxF : public System::Windows::Forms::Form
 	{
+	private: List<MessageClassF^>^ messageClassListF;
 	public:
-		MessageBoxF(User^ user)
+		MessageBoxF()
 		{
 			InitializeComponent();
 			//
@@ -81,9 +84,9 @@ namespace GUIforSIxerr {
 #pragma endregion
 	private: System::Void MassagesBox_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: List<MessageClass^>^ messageClassList;
+	//private: List<MessageClassF^>^ messageClassListF;
 	private: System::Void flowLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-		String^ UserID = LOSF::user->Password;;;
+		/*String^ UserID = LOSF::userF->Password;
 		String^ connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\jiang\\DataBase\\SixerrDB.accdb";
 		String^ sqlQuery = "SELECT * FROM [Message] WHERE ID_Reciver=@ID_Reciver ORDER BY [Coming_Date] DES";
 
@@ -97,23 +100,23 @@ namespace GUIforSIxerr {
 			command->Parameters->AddWithValue("@ID_Reciver", UserID);
 
 			OleDbDataReader^ reader = command->ExecuteReader();
-			messageClassList = gcnew List<MessageClass^>();
+			messageClassListF = gcnew List<MessageClassF^>();
 			while (reader->Read()) {
-				MessageClass^ messageClass = gcnew MessageClass();
-				messageClass->ID_Sender = reader["ID_Sender"]->ToString();
-				messageClass->ID_Reciver = reader["ID_Reciever"]->ToString();
-				messageClass->Message = reader["Message"]->ToString();
-				messageClass->ComingDate = Convert::ToDateTime(reader["Coming_Date"]);
+				MessageClassF^ messageClassF = gcnew MessageClassF();
+				messageClassF->ID_Sender = reader["ID_Sender"]->ToString();
+				messageClassF->ID_Reciver = reader["ID_Reciver"]->ToString();
+				messageClassF->Message = reader["Message"]->ToString();
+				messageClassF->ComingDate = Convert::ToDateTime(reader["Coming_Date"]);
 			}
 			reader->Close();
 
 
-			for each (MessageClass ^ messageClass in messageClassList) {
+			for each (MessageClassF ^ messageClassF in messageClassListF) {
 				MessagePresenter^ messagePresenter = gcnew MessagePresenter();
-				messagePresenter->PopulateUserFrom(messageClass->ID_Sender);
-				messagePresenter->PopulateMessage(messageClass->Message);
-				messagePresenter->PopulateDate(messageClass->ComingDate);
-				messagePresenter->PopulateToUser(messageClass->ID_Reciver);
+				messagePresenter->PopulateUserFrom(messageClassF->ID_Sender);
+				messagePresenter->PopulateMessage(messageClassF->Message);
+				messagePresenter->PopulateDate(messageClassF->ComingDate);
+				messagePresenter->PopulateToUser(messageClassF->ID_Reciver);
 
 
 				flowLayoutPanel2->Controls->Add(messagePresenter);
@@ -122,7 +125,7 @@ namespace GUIforSIxerr {
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show("Failed to connect to database " + ex->Message + UserID, "Database Connection Error", MessageBoxButtons::OK);
-		}
+		}*/
 	}
 	};
 }

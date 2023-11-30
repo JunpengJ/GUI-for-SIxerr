@@ -1,5 +1,5 @@
 #pragma once
-#include "MessageClass.h"
+#include "MessageClassF.h"
 #include "LOSF.h"
 
 namespace GUIforSIxerr {
@@ -17,7 +17,7 @@ namespace GUIforSIxerr {
 	public ref class SendMessageF : public System::Windows::Forms::Form
 	{
 	public:
-		SendMessageF(void)
+		SendMessageF()
 		{
 			InitializeComponent();
 			//
@@ -163,7 +163,7 @@ private: System::Void ToUserId_TextChanged(System::Object^ sender, System::Event
 private: System::Void Message_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void submit_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ fromUser = LOSF::user->Password;
+	/*String^ fromUser = LOSF::userF->Password;
 	String^ toUser = this->ToUserId->Text;
 	String^ messages = this->Message->Text;
 	String^ sqlQuery = "INSERT INTO [Message] (ID_Sender,ID_Reciver,Message,Coming_Date) VALUES (@Username,@ID_Reciver,@Message,Date());";
@@ -187,7 +187,7 @@ private: System::Void submit_Click(System::Object^ sender, System::EventArgs^ e)
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show("Failed to send message" + ex->Message, "Register Failure", MessageBoxButtons::OK);
-	}
+	}*/
 }
 private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();

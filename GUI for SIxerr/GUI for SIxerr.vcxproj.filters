@@ -74,6 +74,12 @@
     <ClInclude Include="MessageBoxF.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MessageClassF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="userF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Documents\SixerrDB.accdb">

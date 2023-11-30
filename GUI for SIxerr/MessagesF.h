@@ -18,7 +18,7 @@ namespace GUIforSIxerr {
 	public ref class MessagesF : public System::Windows::Forms::Form
 	{
 	public:
-		MessagesF(User ^user)
+		MessagesF()
 		{
 			InitializeComponent();
 			//
@@ -100,7 +100,7 @@ namespace GUIforSIxerr {
 		sendMessageF->Show();
 	}
 	private: System::Void mailBox_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox^ MessagesBoxF = gcnew MessageBox();
+		MessageBoxF^ MessagesBoxF = gcnew MessageBoxF();
 		MessagesBoxF->Show();
 	}
 	};

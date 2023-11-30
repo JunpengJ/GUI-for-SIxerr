@@ -28,9 +28,6 @@ void main(array<String^>^ args) {
 	User^ user = nullptr;
 	GUIforSIxerr::Freelencer FreelancerForm(user);
 	GUIforSIxerr::Customer Customerform(user);
-	GUIforSIxerr::SendMessage SendMForm(user);
-	GUIforSIxerr::MassagesBox MessBForm(user);
-	GUIforSIxerr::Messages MessForm(user);
 
 	while (true) {
 
@@ -52,7 +49,7 @@ void main(array<String^>^ args) {
 				continue;
 			}
 			else {
-				user = loginForm.user;
+				user = loginForm.userC;
 				break;
 			}
 		}
@@ -73,7 +70,7 @@ void main(array<String^>^ args) {
 				continue;
 			}
 			else {
-				user = loginFormF.user;
+				user = loginFormF.userF;
 				break;
 			}
 		}
