@@ -121,6 +121,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MessagePresenter.cpp" />
     <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +138,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MessageClass.h" />
+    <ClInclude Include="MessagePresenter.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="User.h" />
     <Natvis Include="LOSC.h">
       <FileType>CppForm</FileType>
@@ -180,6 +184,9 @@
     <EmbeddedResource Include="LOSF.resx" />
     <EmbeddedResource Include="MassagesBox.resx">
       <DependentUpon>MassagesBox.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessagePresenter.resx">
+      <DependentUpon>MessagePresenter.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Messages.resx">
       <DependentUpon>Messages.h</DependentUpon>
