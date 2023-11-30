@@ -18,6 +18,9 @@
     <ClCompile Include="Program.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="MessagePresenter.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Interface.h">
@@ -57,6 +60,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MessageClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MessagePresenter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MessagesF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SendMessageF.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBoxF.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
