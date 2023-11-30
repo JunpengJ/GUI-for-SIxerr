@@ -32,7 +32,7 @@ void main(array<String^>^ args) {
 
 	User^ user = nullptr;
 	UserF^ userF = nullptr;
-	GUIforSIxerr::Freelencer FreelancerForm(userF);
+	//GUIforSIxerr::Freelencer FreelancerForm(userF);
 	GUIforSIxerr::Customer Customerform(user);
 
 	while (true) {
@@ -76,14 +76,13 @@ void main(array<String^>^ args) {
 				continue;
 			}
 			else {
-				userF = loginFormF.userF;
+				user = loginFormF.user;
 				break;
 			}
 		}
 
 		else {
 			user = form.user;
-			userF = form.userF;
 			break;
 		}
 		
@@ -98,8 +97,7 @@ void main(array<String^>^ args) {
 		GUIforSIxerr::Freelencer freelancer(user);
 		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
 		freelancer.ShowDialog();
-		MessageBox::Show("Welcome " + userF->FnameF, "Sixerr", MessageBoxButtons::OK);
-		Application::Run(% FreelancerForm);
+		
 	}
 
 }
