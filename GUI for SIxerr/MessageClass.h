@@ -6,4 +6,5 @@ public:
 	String^ ID_Sender;
 	String^ ID_Reciver;
 	String^ Message;
+	DateTime^ ComingDate;
 };
