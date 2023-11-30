@@ -31,7 +31,9 @@ void main(array<String^>^ args) {
 
 
 	User^ user = nullptr;
-	
+	UserF^ userF = nullptr;
+	GUIforSIxerr::Freelencer FreelancerForm(userF);
+	GUIforSIxerr::Customer Customerform(user);
 
 	while (true) {
 
@@ -53,7 +55,7 @@ void main(array<String^>^ args) {
 				continue;
 			}
 			else {
-				user = loginForm.user;
+				user = loginForm.userC;
 				break;
 			}
 		}
@@ -74,20 +76,20 @@ void main(array<String^>^ args) {
 				continue;
 			}
 			else {
-				user = loginFormF.user;
+				userF = loginFormF.userF;
 				break;
 			}
 		}
 
 		else {
 			user = form.user;
+			userF = form.userF;
 			break;
 		}
 		
 
 	}
 	if (loginForm.CustomerStatus) {
-		GUIforSIxerr::Customer Customerform(user);
 		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
 		Customerform.ShowDialog();
 	}
@@ -96,6 +98,8 @@ void main(array<String^>^ args) {
 		GUIforSIxerr::Freelencer freelancer(user);
 		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
 		freelancer.ShowDialog();
+		MessageBox::Show("Welcome " + userF->FnameF, "Sixerr", MessageBoxButtons::OK);
+		Application::Run(% FreelancerForm);
 	}
 
 }
