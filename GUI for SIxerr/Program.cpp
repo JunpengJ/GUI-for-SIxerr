@@ -25,6 +25,9 @@ void main(array<String^>^ args) {
 	GUIforSIxerr::LOSF loginFormF;
 	GUIforSIxerr::SignUpForC SignUpCust;
 	GUIforSIxerr::SignUpForF SignUpFree;
+	
+
+
 
 
 	User^ user = nullptr;
@@ -86,7 +89,7 @@ void main(array<String^>^ args) {
 	if (loginForm.CustomerStatus) {
 		GUIforSIxerr::Customer Customerform(user);
 		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
-		Application::Run(% Customerform);
+		Customerform.ShowDialog();
 	}
 	if (loginFormF.FreelancerStatus)
 	{
