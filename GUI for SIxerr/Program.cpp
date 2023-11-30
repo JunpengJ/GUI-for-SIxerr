@@ -26,7 +26,8 @@ void main(array<String^>^ args) {
 	GUIforSIxerr::SignUpForF SignUpFree;
 
 	User^ user = nullptr;
-	GUIforSIxerr::Freelencer FreelancerForm(user);
+	UserF^ userF = nullptr;
+	GUIforSIxerr::Freelencer FreelancerForm(userF);
 	GUIforSIxerr::Customer Customerform(user);
 
 	while (true) {
@@ -70,13 +71,14 @@ void main(array<String^>^ args) {
 				continue;
 			}
 			else {
-				user = loginFormF.userF;
+				userF = loginFormF.userF;
 				break;
 			}
 		}
 
 		else {
 			user = form.user;
+			userF = form.userF;
 			break;
 		}
 		
@@ -88,7 +90,7 @@ void main(array<String^>^ args) {
 	}
 	if (loginFormF.FreelancerStatus)
 	{
-		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
+		MessageBox::Show("Welcome " + userF->FnameF, "Sixerr", MessageBoxButtons::OK);
 		Application::Run(% FreelancerForm);
 	}
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "MessageClassF.h"
 #include "LOSF.h"
+#include "UserF.h"
 
 namespace GUIforSIxerr {
 
@@ -10,6 +11,8 @@ namespace GUIforSIxerr {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::OleDb;
+
 
 	/// <summary>
 	/// SendMessageF ժҪ
@@ -17,7 +20,7 @@ namespace GUIforSIxerr {
 	public ref class SendMessageF : public System::Windows::Forms::Form
 	{
 	public:
-		SendMessageF()
+		SendMessageF(void)
 		{
 			InitializeComponent();
 			//
@@ -163,31 +166,30 @@ private: System::Void ToUserId_TextChanged(System::Object^ sender, System::Event
 private: System::Void Message_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void submit_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*String^ fromUser = LOSF::userF->Password;
-	String^ toUser = this->ToUserId->Text;
-	String^ messages = this->Message->Text;
-	String^ sqlQuery = "INSERT INTO [Message] (ID_Sender,ID_Reciver,Message,Coming_Date) VALUES (@Username,@ID_Reciver,@Message,Date());";
-	String^ connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\jiang\\DataBase\\SixerrDB.accdb";
-	if (toUser->Length == 0 || messages->Length == 0) {
-		MessageBox::Show("User ID or Message should not empty.", "", MessageBoxButtons::OK);
-		return;
-	}
-	try {
-		OleDbConnection^ connection = gcnew OleDbConnection(connString);
-		connection->Open();
-		OleDbCommand^ command = gcnew OleDbCommand(sqlQuery, connection);
-		command->Parameters->Add(gcnew OleDbParameter("@Username", OleDbType::VarChar))->Value = fromUser;
-		command->Parameters->Add(gcnew OleDbParameter("@ID_Reciver", OleDbType::VarChar))->Value = toUser;
-		command->Parameters->Add(gcnew OleDbParameter("@Message", OleDbType::VarChar))->Value = messages;
-		command->ExecuteNonQuery();
+	//String^ fromUser = LOSF::userF->PasswordF;
+	//String^ toUser = this->ToUserId->Text;
+	//String^ messages = this->Message->Text;
+	//String^ sqlQuery = "INSERT INTO [Message] (ID_Sender,ID_Reciver,Message,Coming_Date) VALUES (@Username,@ID_Reciver,@Message,Date());";
+	//String^ connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\jiang\\DataBase\\SixerrDB.accdb";
+	//if (toUser->Length == 0 || messages->Length == 0) {
+	//	MessageBox::Show("User ID or Message should not empty.", "", MessageBoxButtons::OK);
+	//	return;
+	//}
+	//try {
+	//	OleDbConnection^ connection = gcnew OleDbConnection(connString);
+	//	connection->Open();
+	//	OleDbCommand^ command = gcnew OleDbCommand(sqlQuery, connection);
+	//	command->Parameters->Add(gcnew OleDbParameter("@ID_Reciver", OleDbType::VarChar))->Value = toUser;
+	//	command->Parameters->Add(gcnew OleDbParameter("@Message", OleDbType::VarChar))->Value = messages;
+	//	command->ExecuteNonQuery();
 
-		MessageBox::Show("Message sented successfully!" + fromUser, "Success", MessageBoxButtons::OK);
-		connection->Close();
+	//	MessageBox::Show("Message sented successfully!" /*+ fromUser*/, "Success", MessageBoxButtons::OK);
+	//	connection->Close();
 
-	}
-	catch (Exception^ ex) {
-		MessageBox::Show("Failed to send message" + ex->Message, "Register Failure", MessageBoxButtons::OK);
-	}*/
+	//}
+	//catch (Exception^ ex) {
+	//	MessageBox::Show("Failed to send message" + ex->Message, "Register Failure", MessageBoxButtons::OK);
+	//}
 }
 private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
