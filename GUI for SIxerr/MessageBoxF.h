@@ -2,7 +2,7 @@
 #include "LOSF.h"
 #include "MessageClassF.h"
 #include "MessagePresenter.h"
-#include "UserF.h"
+#include "userF.h"
 #include <list>
 
 namespace GUIforSIxerr {
@@ -86,46 +86,55 @@ namespace GUIforSIxerr {
 	}
 	//private: List<MessageClassF^>^ messageClassListF;
 	private: System::Void flowLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-		/*String^ UserID = LOSF::userF->Password;
-		String^ connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\jiang\\DataBase\\SixerrDB.accdb";
-		String^ sqlQuery = "SELECT * FROM [Message] WHERE ID_Reciver=@ID_Reciver ORDER BY [Coming_Date] DES";
+		//List<MessageClass^>^ messageClassList;
+		//String^ UserID;
 
-		flowLayoutPanel2->Controls->Clear();
+		//String^ connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\jiang\\DataBase\\SixerrDB.accdb";
+		////String^ connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\mckay\\Documents\\SixerrDB.accdb";
+		//String^ sqlQuery = "SELECT * FROM Message WHERE ID_Reciver=@ID_Reciever OR ID_Sender=@ID_Reciever ORDER BY [Coming_Date] ASC";
 
-		try {
-			OleDbConnection^ connection = gcnew OleDbConnection(connString);
-			connection->Open();
-			OleDbCommand^ command = gcnew OleDbCommand(sqlQuery, connection);
+		//if (GUIforSIxerr::LOSF::FreelancerStatus == true) {
+		//	UserID = GUIforSIxerr::LOSF::userF->PasswordF;
+		//}
+		//else UserID = "none";
 
-			command->Parameters->AddWithValue("@ID_Reciver", UserID);
+		//flowLayoutPanel2->Controls->Clear();
+		//OleDbConnection^ connection = gcnew OleDbConnection(connString);
+		//try {
+		//	connection->Open();
+		//	OleDbCommand^ command = gcnew OleDbCommand(sqlQuery, connection);
+		//	command->Parameters->AddWithValue("@ID_Reciever", UserID);
 
-			OleDbDataReader^ reader = command->ExecuteReader();
-			messageClassListF = gcnew List<MessageClassF^>();
-			while (reader->Read()) {
-				MessageClassF^ messageClassF = gcnew MessageClassF();
-				messageClassF->ID_Sender = reader["ID_Sender"]->ToString();
-				messageClassF->ID_Reciver = reader["ID_Reciver"]->ToString();
-				messageClassF->Message = reader["Message"]->ToString();
-				messageClassF->ComingDate = Convert::ToDateTime(reader["Coming_Date"]);
-			}
-			reader->Close();
+		//	OleDbDataReader^ reader = command->ExecuteReader();
+		//	messageClassList = gcnew List<MessageClass^>();
+		//	while (reader->Read()) {
+		//		MessageClass^ messageClass = gcnew MessageClass();
+		//		messageClass->ID_Sender = reader["ID_Sender"]->ToString();
+		//		messageClass->ID_Reciver = reader["ID_Reciver"]->ToString();
+		//		messageClass->Message = reader["Message"]->ToString();
+		//		messageClass->ComingDate = Convert::ToDateTime(reader["Coming_Date"]);
+
+		//		messageClassList->Add(messageClass);
+		//	}
+		//	reader->Close();
 
 
-			for each (MessageClassF ^ messageClassF in messageClassListF) {
-				MessagePresenter^ messagePresenter = gcnew MessagePresenter();
-				messagePresenter->PopulateUserFrom(messageClassF->ID_Sender);
-				messagePresenter->PopulateMessage(messageClassF->Message);
-				messagePresenter->PopulateDate(messageClassF->ComingDate);
-				messagePresenter->PopulateToUser(messageClassF->ID_Reciver);
+		//	for each (MessageClass ^ messageClass in messageClassList) {
+		//		MessagePresenter^ messagePresenter = gcnew MessagePresenter();
+		//		messagePresenter->PopulateUserFrom(messageClass->ID_Sender);
+		//		messagePresenter->PopulateMessage(messageClass->Message);
+		//		messagePresenter->PopulateDate(messageClass->ComingDate);
+		//		messagePresenter->PopulateToUser(messageClass->ID_Reciver);
 
 
-				flowLayoutPanel2->Controls->Add(messagePresenter);
-				connection->Close();
-			}
-		}
-		catch (Exception^ ex) {
-			MessageBox::Show("Failed to connect to database " + ex->Message + UserID, "Database Connection Error", MessageBoxButtons::OK);
-		}*/
+
+		//		flowLayoutPanel2->Controls->Add(messagePresenter);
+		//	}
+		//	connection->Close();
+		//}
+		//catch (Exception^ ex) {
+		//	MessageBox::Show("Failed to connect to database " + ex->Message, "Database Connection Error", MessageBoxButtons::OK);
+		//}
 	}
 	};
 }

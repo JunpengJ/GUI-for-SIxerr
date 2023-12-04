@@ -1,6 +1,7 @@
 #pragma once
 #include "SendMessageF.h"
 #include "MessageBoxF.h"
+#include "LOSF.h"
 
 
 namespace GUIforSIxerr {

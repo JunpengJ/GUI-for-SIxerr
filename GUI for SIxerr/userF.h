@@ -3,10 +3,10 @@ using namespace System;
 
 public ref class UserF {
 public:
-	String^ Username;
-	String^ Password;
-	String^ Fname;
-	String^ Lname;
-	int Rating;
-	String^ Desig;
+	String^ UsernameF;
+	String^ PasswordF;
+	String^ FnameF;
+	String^ LnameF;
+	int RatingF;
+	String^ DesigF;
 };

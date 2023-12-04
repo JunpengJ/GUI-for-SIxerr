@@ -26,6 +26,7 @@ void main(array<String^>^ args) {
 	GUIforSIxerr::SignUpForF SignUpFree;
 
 	User^ user = nullptr;
+	UserF^ userF = nullptr;
 	GUIforSIxerr::Freelencer FreelancerForm(user);
 	GUIforSIxerr::Customer Customerform(user);
 
