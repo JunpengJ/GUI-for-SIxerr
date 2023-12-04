@@ -137,28 +137,14 @@
     <ClInclude Include="Interface.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MessageBoxF.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="MessageClass.h" />
-    <ClInclude Include="MessageClassF.h" />
     <ClInclude Include="MessagePresenter.h">
       <FileType>CppControl</FileType>
     </ClInclude>
-    <ClInclude Include="MessagesF.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="SendMessageF.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="User.h" />
-    <ClInclude Include="userF.h" />
     <Natvis Include="LOSC.h">
       <FileType>CppForm</FileType>
     </Natvis>
-    <ClInclude Include="LOSF.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="MassagesBox.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -196,23 +182,14 @@
     <EmbeddedResource Include="MassagesBox.resx">
       <DependentUpon>MassagesBox.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MessageBoxF.resx">
-      <DependentUpon>MessageBoxF.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MessagePresenter.resx">
       <DependentUpon>MessagePresenter.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Messages.resx">
       <DependentUpon>Messages.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MessagesF.resx">
-      <DependentUpon>MessagesF.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SendMessage.resx">
       <DependentUpon>SendMessage.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SendMessageF.resx">
-      <DependentUpon>SendMessageF.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.h</DependentUpon>

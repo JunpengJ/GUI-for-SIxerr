@@ -47,9 +47,6 @@
     <ClInclude Include="MassagesBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LOSF.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SignUpForC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -63,21 +60,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MessagePresenter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MessagesF.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SendMessageF.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MessageBoxF.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MessageClassF.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="userF.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

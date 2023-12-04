@@ -3,7 +3,6 @@
 #include "Freelencer.h"
 #include "Interface.h"
 #include "LOSC.h"
-#include "LOSF.h"
 #include "MassagesBox.h"
 #include "Messages.h"
 #include "SendMessage.h"
@@ -24,11 +23,11 @@ void main(array<String^>^ args) {
 	//GUIforSIxerr::LOSF loginFormF;
 	GUIforSIxerr::SignUpForC SignUpCust;
 	GUIforSIxerr::SignUpForF SignUpFree;
+	GUIforSIxerr::Messages messageForm;
 
 	User^ user = nullptr;
-	UserF^ userF = nullptr;
-	GUIforSIxerr::Freelencer FreelancerForm(user);
-	GUIforSIxerr::Customer Customerform(user);
+	GUIforSIxerr::Freelencer FreelancerForm;
+	GUIforSIxerr::Customer Customerform;
 
 	while (true) {
 
@@ -62,20 +61,40 @@ void main(array<String^>^ args) {
 				break;
 			}
 		}
-
 		else {
 			user = form.user;
 			break;
 		}
 	}
-	if (loginForm.CustomerStatus) {
-		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
-		Application::Run(% Customerform);
+	while (true) {
+		if (loginForm.CustomerStatus) {
+			MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
+			Customerform.ShowDialog();
+			if (Customerform.switchToMessageC) {
+				messageForm.ShowDialog();
+				Customerform.switchToMessageC = false;
+				continue;
+			}
+			else {
+				break;
+			}
+		}
+		else if (loginForm.FreelancerStatus)
+		{
+			MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
+			FreelancerForm.ShowDialog();
+			if (FreelancerForm.switchToMessageF) {
+				messageForm.ShowDialog();
+				FreelancerForm.switchToMessageF = false;
+				continue;
+			}
+			else {
+				break;
+			}
+		}
+		else{
+			user = loginForm.user;
+			break;
+		}
 	}
-	if (loginForm.FreelancerStatus)
-	{
-		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
-		Application::Run(% FreelancerForm);
-	}
-
 }
