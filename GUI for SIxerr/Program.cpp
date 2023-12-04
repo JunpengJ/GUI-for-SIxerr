@@ -21,7 +21,7 @@ void main(array<String^>^ args) {
 	Application::SetCompatibleTextRenderingDefault(false);
 	GUIforSIxerr::Interface form;
 	GUIforSIxerr::LOSC loginForm;
-	GUIforSIxerr::LOSF loginFormF;
+	//GUIforSIxerr::LOSF loginFormF;
 	GUIforSIxerr::SignUpForC SignUpCust;
 	GUIforSIxerr::SignUpForF SignUpFree;
 
@@ -42,35 +42,22 @@ void main(array<String^>^ args) {
 				loginForm.switchToInterface = false;
 				continue;
 			}
-
+			else if (loginForm.switchToInterface) {
+				loginForm.switchToInterface = false;
+				continue;
+			}
 			else if (loginForm.switchToCustomerSignUp) {
 				SignUpCust.ShowDialog();
 				loginForm.switchToCustomerSignUp = false;
 				continue;
 			}
-			else {
-				user = loginForm.userC;
-				break;
-			}
-		}
-
-		else if (form.switchToFreelancer)
-		{
-			loginFormF.ShowDialog();
-			form.switchToFreelancer = false;
-
-
-			if (loginFormF.switchToInterface) {
-				loginFormF.switchToInterface = false;
-				continue;
-			}
-			else if (loginFormF.switchToFreelancerSignUp) {
+			else if (loginForm.switchToFreelancerSignUp) {
 				SignUpFree.ShowDialog();
-				loginFormF.switchToFreelancerSignUp = false;
+				loginForm.switchToFreelancerSignUp = false;
 				continue;
 			}
 			else {
-				user = loginFormF.userF;
+				user = loginForm.user;
 				break;
 			}
 		}
@@ -79,14 +66,12 @@ void main(array<String^>^ args) {
 			user = form.user;
 			break;
 		}
-		
-
 	}
 	if (loginForm.CustomerStatus) {
 		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
 		Application::Run(% Customerform);
 	}
-	if (loginFormF.FreelancerStatus)
+	if (loginForm.FreelancerStatus)
 	{
 		MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
 		Application::Run(% FreelancerForm);
