@@ -28,7 +28,18 @@ void main(array<String^>^ args) {
 	GUIforSIxerr::Messages messageForm;
 
 	User^ user = nullptr;
-	GUIforSIxerr::Freelencer FreelancerForm;
+
+	//	// Connection string for Microsoft Access
+			//String^ connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Marcus Hoang\\Documents\\SixerrDB.accdb";
+	//String^ connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users//mckay\\Documents\\SixerrDB.accdb";
+	//String^ query = "SELECT USERNAME FROM [Users] WHERE FREELANCER = @Username";
+	
+
+	// Create a connection and command
+	//OleDbConnection^ connection = gcnew OleDbConnection(connectionString);
+	//OleDbCommand^ command = gcnew OleDbCommand(query, connection);
+	//command->Parameters->AddWithValue("@Username", username);
+
 	GUIforSIxerr::Customer Customerform;
 
 	while (true) {
@@ -84,6 +95,9 @@ void main(array<String^>^ args) {
 		else if (loginForm.FreelancerStatus)
 		{
 			MessageBox::Show("Welcome " + user->Fname, "Sixerr", MessageBoxButtons::OK);
+			String^ username = loginForm.user->Password;
+			String^ _Fname = loginForm.user->Fname;
+			GUIforSIxerr::Freelencer FreelancerForm(username, _Fname);
 			FreelancerForm.ShowDialog();
 			if (FreelancerForm.switchToMessageF) {
 				messageForm.ShowDialog();
