@@ -10,35 +10,26 @@
 #include "SignUpForC.h"
 #include "SignUpForF.h"
 #include "MessagePresenter.h"
-
-
+#include "FreelanceUserControl.h"
+#include "Sorting.h"
+#include "User.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
-
+using namespace System::Data::OleDb;
 
 void main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 	GUIforSIxerr::Interface form;
 	GUIforSIxerr::LOSC loginForm;
-	//GUIforSIxerr::LOSF loginFormF;
 	GUIforSIxerr::SignUpForC SignUpCust;
 	GUIforSIxerr::SignUpForF SignUpFree;
 	GUIforSIxerr::Messages messageForm;
 
+	PopulateFreelancers(freelancerVec);
+
 	User^ user = nullptr;
-
-	//	// Connection string for Microsoft Access
-			//String^ connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Marcus Hoang\\Documents\\SixerrDB.accdb";
-	//String^ connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users//mckay\\Documents\\SixerrDB.accdb";
-	//String^ query = "SELECT USERNAME FROM [Users] WHERE FREELANCER = @Username";
-	
-
-	// Create a connection and command
-	//OleDbConnection^ connection = gcnew OleDbConnection(connectionString);
-	//OleDbCommand^ command = gcnew OleDbCommand(query, connection);
-	//command->Parameters->AddWithValue("@Username", username);
 
 	GUIforSIxerr::Customer Customerform;
 

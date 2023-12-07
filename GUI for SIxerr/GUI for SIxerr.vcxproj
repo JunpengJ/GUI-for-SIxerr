@@ -130,6 +130,9 @@
     <ClInclude Include="FindFreelancers.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="FreelanceUserControl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Freelencer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -140,6 +143,7 @@
     <ClInclude Include="MessagePresenter.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="Sorting.h" />
     <ClInclude Include="User.h" />
     <Natvis Include="LOSC.h">
       <FileType>CppForm</FileType>
@@ -169,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FindFreelancers.resx">
       <DependentUpon>FindFreelancers.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreelanceUserControl.resx">
+      <DependentUpon>FreelanceUserControl.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Freelencer.resx">
       <DependentUpon>Freelencer.h</DependentUpon>
